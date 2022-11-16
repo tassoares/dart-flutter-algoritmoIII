@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 //import 'package:flutter/src/widgets/container.dart';
 //import 'package:flutter/src/widgets/framework.dart';
-import 'package:store/drawer_item.dart';
+import 'package:store/menu/drawer_item.dart';
 import 'package:store/login_screen.dart';
 import 'package:store/pages/people.dart';
 
@@ -49,8 +49,8 @@ class NavigationDrawer extends StatelessWidget {
               const Divider(thickness: 1, height: 10, color: Colors.grey,),
               const SizedBox(height: 30,),
               DrawerItem(
-                name: 'People', 
-                icon: Icons.people, 
+                name: 'Configurações', 
+                icon: Icons.settings, 
                 onPressed: ()=> onItemPressed(context, index: 0),
               ),
               const SizedBox(height: 30,),
@@ -85,7 +85,7 @@ class NavigationDrawer extends StatelessWidget {
   }
 
   Widget headerWidget(){
-    const url = 'https://p.kindpng.com/picc/s/78-785975_icon-profile-bio-avatar-person-symbol-chat-icon.png';
+    const url = 'https://i.fbcd.co/products/original/667ca7502e4e218f01e4fbb26e01e2fc7fe17370f64bf444f60818b9d1b2c2b2.jpg';
     return Row(
       children: [
         const CircleAvatar(
@@ -96,9 +96,7 @@ class NavigationDrawer extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
-            Text('Nome', style: TextStyle(fontSize: 14, color: Colors.white),),
-            SizedBox(height: 10,),
-            Text('e-mail', style: TextStyle(fontSize: 14, color: Colors.white),),
+            Text('Store Web', style: TextStyle(fontSize: 24, color: Colors.white),),
           ],
         ),
       ],

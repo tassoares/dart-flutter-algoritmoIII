@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:store/pages/home.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -19,8 +20,9 @@ class LoginScreen extends StatelessWidget {
             ]
           ),
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: ListView(
+          shrinkWrap: true, //extensão da visualização de rolagem
+          //crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget> [
             const SizedBox(height: 200,),
             Padding(padding: const EdgeInsets.all(20),
@@ -90,16 +92,22 @@ class LoginScreen extends StatelessWidget {
                       const SizedBox(height: 30,),
                       const Text("Esqueceu seus dados de login?", style: TextStyle(color: Colors.grey),),
                       const SizedBox(height: 20,),
-                      Container(
-                        height: 50,
-                        margin: const EdgeInsets.symmetric(horizontal: 50),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50),
-                          color: Colors.black
+                      //Estruturação do Botão de entrada 
+                      InkWell(
+                        child: Container(
+                          height: 50,
+                          margin: const EdgeInsets.symmetric(horizontal: 50),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50),
+                            color: Colors.black
+                          ),
+                          child: const Center(                    
+                            child: Text("Entrar", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+                          ),
                         ),
-                        child: const Center(
-                          child: Text("Entrar", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
-                        ),
+                        onTap: () { 
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const Home()));
+                        },
                       ),
                     ],
                   ),
